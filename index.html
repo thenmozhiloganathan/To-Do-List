@@ -1,0 +1,86 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Defines the HTML document with English as the language -->
+  <head>
+    <meta charset="UTF-8" /> <!-- Specifies character encoding as UTF-8 for better compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures the webpage is responsive on different screen sizes -->
+    <title>Todo List</title> <!-- Sets the title of the webpage displayed in the browser tab -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Imports Tailwind CSS for styling -->
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- 
+      - bg-gray-100: Sets a light gray background 
+      - min-h-screen: Ensures the body takes at least the full viewport height
+      - flex items-center justify-center: Uses flexbox to center content both vertically and horizontally 
+    -->
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <!-- 
+        - bg-white: Sets the background color to white
+        - p-8: Adds padding inside the container
+        - rounded-lg: Gives rounded corners
+        - shadow-md: Adds a subtle shadow effect
+        - w-full max-w-md: Makes the container take full width but limits it to a max width of medium size
+        - This limits the maximum width of the element to md (medium size), which in Tailwind is 28rem (448px).
+      -->
+
+      <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">
+        <!-- 
+          - text-3xl: Sets the font size to extra large
+          - font-bold: Makes the text bold
+          - mb-6: Adds bottom margin for spacing
+          - text-center: Centers the text
+          - text-gray-800: Sets a dark gray text color
+        -->
+        Todo List
+      </h1>
+
+      <div class="mb-4">
+        <!-- Adds margin at the bottom to create spacing -->
+
+        <input
+          type="text"
+          id="todoInput"
+          placeholder="Add a new task..."
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <!-- 
+          - type="text": Defines a text input field
+          - id="todoInput": Gives an ID to reference it in JavaScript
+          - placeholder="Add a new task...": Displays placeholder text inside the input field
+          - w-full: Makes the input take full width
+          - px-3 py-2: Adds padding (horizontal: 3, vertical: 2)
+          - border: Adds a border
+          - rounded-md: Gives slightly rounded corners
+          - focus:outline-none: Removes default browser outline on focus
+          - focus:ring-2 focus:ring-blue-500: Adds a blue outline effect when focused
+        -->
+      </div>
+
+      <button
+        id="addTodo"
+        class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mb-6"
+      >
+        <!-- 
+          - id="addTodo": Gives an ID to reference the button in JavaScript
+          - w-full: Makes the button take full width
+          - bg-blue-500: Sets a blue background
+          - text-white: Sets text color to white
+          - py-2: Adds vertical padding
+          - rounded-md: Gives slightly rounded corners
+          - hover:bg-blue-600: Changes background to a darker blue on hover
+          - transition duration-300: Smooth transition effect lasting 300ms
+          - mb-6: Adds bottom margin for spacing
+        -->
+        Add Task
+      </button>
+
+      <ul id="todoList" class="space-y-2"></ul>
+      <!-- 
+        - id="todoList": Gives an ID to reference it in JavaScript
+        - space-y-2: Adds vertical spacing between list items
+      -->
+    </div>
+
+    <script src="script.js"></script> <!-- Links an external JavaScript file (script.js) to handle functionality -->
+  </body>
+</html>
